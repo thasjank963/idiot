@@ -31,10 +31,12 @@ Quagga.init({
           return
       }
       console.log("Initialization finished. Ready to start");
-      var btn = document.querySelector('button');
-  btn.addEventListener('click', Quagga.start);
+      
       
   });
+
+  var btn = document.querySelector('button');
+  btn.addEventListener('click', Quagga.start);
 
   Quagga.onDetected(function(result) {
         var code = result.codeResult.code;
