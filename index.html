@@ -45,6 +45,9 @@
       Quagga.onDetected(function(result) {
           var code = result.codeResult.code;
           resultDiv.textContent += `\n${code}`;
+          if (code == '055989031934') {
+            alert("SUCK YUH MUDDA")
+          }
           Quagga.stop();
           video.style.display = "none";
           scanButton.disabled = false
