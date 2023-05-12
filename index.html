@@ -9,45 +9,42 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <button>Scan</button>
+    <button id="scanButton">Scan</button>
     <div id="video"></div>
+    <div id="result"></div>
     
     <script>
-
-
-
-Quagga.init({
-    inputStream : {
-      name : "Live",
-      type : "LiveStream",
-      target: document.querySelector('#video')    // Or '#yourElement' (optional)
-    },
-    decoder : {
-      readers : ["code_128_reader"]
-    }
-  }, function(err) {
-      if (err) {
-          console.log(err);
-          return
-      }
-      console.log("Initialization finished. Ready to start");
-      
-      
-  });
-
-  var btn = document.querySelector('button');
-  btn.addEventListener('click', Quagga.start);
-
-  Quagga.onDetected(function(result) {
-        var code = result.codeResult.code;
-        resultDiv.textContent = "UPC: " + code;
-        Quagga.stop();
-        video.style.display = "none";
-        scanButton.disabled = false;
+      var scanButton = document.querySelector('#scanButton');
+      var video = document.querySelector('#video');
+      var resultDiv = document.querySelector('#result');
+  
+      scanButton.addEventListener('click', function() {
+          Quagga.init({
+              inputStream : {
+                  name : "Live",
+                  type : "LiveStream",
+                  target: document.querySelector('#video')    // Or '#yourElement' (optional)
+              },
+              decoder : {
+                  readers : ["code_128_reader"]
+              }
+          }, function(err) {
+              if (err) {
+                  console.log(err);
+                  return
+              }
+              console.log("Initialization finished. Ready to start");
+              Quagga.start();
+          });
       });
-
   
-  
+      Quagga.onDetected(function(result) {
+          var code = result.codeResult.code;
+          resultDiv.textContent = "UPC: " + code;
+          Quagga.stop();
+          video.style.display = "none";
+          scanButton.disabled = false;
+      });
     </script>
 </body>
 </html>
