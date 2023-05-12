@@ -4,6 +4,18 @@ body {
 }
 
 #video {
-    width: 100px;
+    width: 80%;
     height: 100px;
+    justify-content: center;
 }
+
+
+button {
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    height: 20px;
+
+    
+}
+
