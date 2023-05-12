@@ -44,7 +44,7 @@
 
       Quagga.onDetected(function(result) {
           var code = result.codeResult.code;
-          resultDiv.textContent += `\n + ${code}`;
+          resultDiv.textContent += `\n${code}`;
           Quagga.stop();
           video.style.display = "none";
           scanButton.disabled = false

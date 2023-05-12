@@ -1,9 +1,9 @@
 body {
     background-color: yellow;
-    font-size: 36px;
+    font-size: 20px;
 }
 
 #video {
-    width: 300px;
-    height: 300px;
+    width: 100px;
+    height: 100px;
 }
