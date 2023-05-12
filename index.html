@@ -35,16 +35,18 @@
               }
               console.log("Initialization finished. Ready to start");
               Quagga.start();
-          });
-      });
-  
-      Quagga.onDetected(function(result) {
+              scanButton.disabled = true;
+              Quagga.onDetected(function(result) {
           var code = result.codeResult.code;
           resultDiv.textContent = "UPC: " + code;
           Quagga.stop();
           video.style.display = "none";
           scanButton.disabled = false;
       });
+          });
+      });
+  
+      
     </script>
 </body>
 </html>
