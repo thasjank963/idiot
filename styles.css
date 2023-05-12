@@ -1,21 +1,19 @@
 body {
-    background-color: pink;
+    background-color: rgb(0, 255, 4);
     font-size: 20px;
-}
+    display: flex;
+    flex-direction: column;
 
+}
 #video {
     width: 80%;
     height: 100px;
     justify-content: center;
+    margin: 0 auto;
+    margin-top: 20px;
 }
-
 
 button {
-    display: flex;
-    justify-content: center;
     width: 30%;
-    height: 20px;
-
-    
+    margin: 0 auto;
 }
-
