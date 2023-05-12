@@ -1,3 +1,8 @@
 body {
     background-color: pink;
 }
+
+#video {
+    width: 300px;
+    height: 300px;
+}

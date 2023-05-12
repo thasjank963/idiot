@@ -36,6 +36,14 @@ Quagga.init({
       
   });
 
+  Quagga.onDetected(function(result) {
+        var code = result.codeResult.code;
+        resultDiv.textContent = "UPC: " + code;
+        Quagga.stop();
+        video.style.display = "none";
+        scanButton.disabled = false;
+      });
+
   
   
     </script>
